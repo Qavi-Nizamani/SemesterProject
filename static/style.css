@@ -1,0 +1,27 @@
+#id02 {
+  background-color: #00000085;
+}
+#id02 a {
+  color: red;
+  font-weight: bold;
+}
+#paypalLoginForm {
+  position: relative;
+  top: 12rem;
+  width: 19rem;
+  background-color: white;
+  color: black;
+}
+input[type="email"],
+input[type="password"],
+input[type="vc"] {
+  padding: 2px 10px !important;
+}
+#paypalCancelBtn {
+  position: absolute;
+  background-color: transparent !important;
+  color: black;
+  font-weight: bold;
+  right: 20px;
+  top: 15px;
+}
