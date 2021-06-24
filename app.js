@@ -80,7 +80,7 @@ app.get("/static/logout", isLoggedIn, (req, res) => {
 
 app.post("/login", loginVerification, (req, res, next) => {
   console.log("verfied");
-  res.redirect("/static/admin.html");
+  res.redirect("/static/admin");
 });
 
 app.get("/api/contact", async (req, res) => {
