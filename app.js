@@ -73,7 +73,9 @@ app.get("/static/logout", isLoggedIn, (req, res) => {
 });
 
 //RENDER STATIC PAGES AFTER ADMIN ROUTE VERIFICATION
-app.use("/static", express.static("static"));
+// app.use("/static", express.static("static"));
+app.use(express.static(path.join(__dirname, "static")));
+
 
 app.post("/login", loginVerification, (req, res, next) => {
   console.log("verfied");
