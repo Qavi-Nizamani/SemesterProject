@@ -9,21 +9,24 @@ async function submitForm(e) {
   let email = document.getElementById("email").value;
   let message = document.getElementById("comment").value;
 
-  let response = await fetch("http://localhost:8000/contact", {
-    // Adding method type
-    method: "POST",
-    // Adding body or contents to send
-    body: JSON.stringify({
-      name,
-      email,
-      message,
-    }),
+  let response = await fetch(
+    "https://samiullah-portfolio.herokuapp.com/contact",
+    {
+      // Adding method type
+      method: "POST",
+      // Adding body or contents to send
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+      }),
 
-    // Adding headers to the request
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  });
+      // Adding headers to the request
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    }
+  );
   // Converting to JSON
   let result = await response.json();
   if (result) {

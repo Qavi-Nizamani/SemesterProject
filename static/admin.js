@@ -1,6 +1,8 @@
 // Get contacts and insert into admin page..
 (async function getText() {
-  let myObject = await fetch("http://localhost:8000/api/contact");
+  let myObject = await fetch(
+    "https://samiullah-portfolio.herokuapp.com/api/contact"
+  );
   let contact = await myObject.json();
   let msgBox = document.getElementById("msgBox");
   let str = "";
