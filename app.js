@@ -65,7 +65,7 @@ const loginVerification = wrapAsync(async function (req, res, next) {
 app.get("/static/admin.html", isLoggedIn, (req, res) => {
   console.log("working");
   console.log(__dirname);
-  res.sendFile(path.join("/static/admin.html"));
+  res.sendFile(path.join(__dirname , "static", "admin.html"));
 });
 app.get("/static/logout", isLoggedIn, (req, res) => {
   req.session.user = "";
