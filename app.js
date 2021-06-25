@@ -65,7 +65,7 @@ const loginVerification = wrapAsync(async function (req, res, next) {
 // END POINTS
 app.get("/",(req,res) => {
   res.sendFile(path.join(__dirname , "static", "index.html"));
-}
+});
 app.get("/admin", isLoggedIn, (req, res) => {
   console.log("working");
   console.log(__dirname);
