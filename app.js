@@ -63,27 +63,24 @@ const loginVerification = wrapAsync(async function (req, res, next) {
 
 
 // END POINTS
-app.get("/",(req,res) => {
-  res.sendFile(path.join(__dirname , "static", "index.html"));
-});
-app.get("/admin", isLoggedIn, (req, res) => {
+app.get("/static/admin.html", isLoggedIn, (req, res) => {
   console.log("working");
   console.log(__dirname);
   res.sendFile(path.join(__dirname , "static", "Admin.html"));
 });
 app.get("/static/logout", isLoggedIn, (req, res) => {
   req.session.user = "";
-  res.redirect("/");
+  res.redirect("/static");
 });
 
 //RENDER STATIC PAGES AFTER ADMIN ROUTE VERIFICATION
-// app.use("/static", express.static("static"));
+app.use("/static", express.static("static"));
 // app.use(express.static(path.join(__dirname, "static")));
 
 
 app.post("/login", loginVerification, (req, res, next) => {
   console.log("verfied");
-  res.redirect("/admin");
+  res.redirect("/static/admin.html");
 });
 
 app.get("/api/contact", async (req, res) => {
